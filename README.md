@@ -1,0 +1,2 @@
+[![Go Reference](https://pkg.go.dev/badge/github.com/maxkaemmerer/go-event-sourcing.svg)](https://pkg.go.dev/github.com/maxkaemmerer/go-event-sourcing)
+# Do not use this in production, this is just an experiment!
