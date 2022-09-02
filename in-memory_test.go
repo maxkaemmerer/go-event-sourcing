@@ -98,7 +98,7 @@ func Test_DispatchingInMemoryEventStore_ShouldStoreAggregate(t *testing.T) {
 
 	aggregate := NewTestAggregate()
 
-	err := eventStore.Store(&aggregate)
+	err := eventStore.Store(aggregate)
 
 	if err != nil {
 		t.Errorf("Should not have returned error")
@@ -164,7 +164,7 @@ func Test_DispatchingInMemoryEventStore_ShouldReturnErrorIfNoFactoryFoundForAggr
 
 	aggregate := NewTestAggregate()
 
-	err := eventStore.Store(&aggregate)
+	err := eventStore.Store(aggregate)
 
 	fetchedAggregate, err := eventStore.Get(aggregate.MetaData().AggregateId(), aggregate.MetaData().AggregateType())
 
@@ -186,7 +186,7 @@ func Test_DispatchingInMemoryEventStore_ShouldReturnErrorIfNoHandlerFound(t *tes
 
 	aggregate := NewTestAggregate()
 
-	err := eventStore.Store(&aggregate)
+	err := eventStore.Store(aggregate)
 
 	if err == nil || err.Error() != "No handler found for message testAggregate-testAggregateCreated" {
 		t.Errorf("should have returned error %s", err.Error())

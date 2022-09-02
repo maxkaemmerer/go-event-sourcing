@@ -18,5 +18,5 @@ type AggregateFactory func(aggregateId, aggregateType string, events []Aggregate
 
 type EventStore interface {
 	Get(aggregateId string, aggregateType string) (Aggregate, error)
-	Store(aggregate *Aggregate) error
+	Store(aggregate Aggregate) error
 }

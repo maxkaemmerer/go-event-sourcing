@@ -12,8 +12,8 @@ type DispatchingInMemoryEventStore struct {
 	MessageBus m.MessageBus
 }
 
-func (es *DispatchingInMemoryEventStore) Store(aggregate *Aggregate) error {
-	metaData := (*aggregate).MetaData()
+func (es *DispatchingInMemoryEventStore) Store(aggregate Aggregate) error {
+	metaData := (aggregate).MetaData()
 
 	aggregatesOfType, ok := es.Aggregates[metaData.AggregateType()]
 	if !ok {
